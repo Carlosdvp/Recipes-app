@@ -15,6 +15,8 @@
     - begin with the userRouter to handle the /auth endpoint
     - /auth/register > to create a new user
     - /auth/login > create a jwt for the user's session
+- create the Recipes Model
+- then add the recipes routes
+- add verifyToken functionality to user routes file
 
 
-    
