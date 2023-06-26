@@ -37,3 +37,10 @@
 - Once user is Logged in
     - automatically navigate to main Recipes page
 
+## Step 4 - The Components
+
+1. The Login / Register component and Router guards
+    - create the auth.store.js file
+        - Pinia store for the login / register component
+    - link to API /login and /register endpoints
+
