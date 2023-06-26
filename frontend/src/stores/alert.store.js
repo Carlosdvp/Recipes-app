@@ -1,4 +1,4 @@
-import { defineStore } from "pinia"
+import { defineStore } from "pinia";
 
 export const useAlertStore = defineStore({
   id: 'alert',
@@ -12,7 +12,7 @@ export const useAlertStore = defineStore({
     error(message) {
       this.alert = { message, type: 'alert-danger'};
     },
-    clar() {
+    clear() {
       this.alert = null;
     }
   }

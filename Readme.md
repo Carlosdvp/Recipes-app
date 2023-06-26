@@ -39,8 +39,17 @@
 
 ## Step 4 - The Components
 
-1. The Login / Register component and Router guards
+1. Create the Navbar component
+    - setup routing for the app with these pages/views:
+        - Home
+        - Login/Register
+        - Recipes
+        - Saved Recipes
+
+2. The Login / Register component and Router guards
     - create the auth.store.js file
-        - Pinia store for the login / register component
+        - Pinia store for the login / register 
+    - create the Login component
+    - add the login and register routes
     - link to API /login and /register endpoints
 

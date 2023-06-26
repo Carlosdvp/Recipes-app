@@ -1,4 +1,4 @@
-<script>
+<script setup>
 import { storeToRefs } from 'pinia'
 import { useAlertStore } from '@/stores'
 

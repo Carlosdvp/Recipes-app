@@ -2,6 +2,9 @@
 import Navbar from './components/Navbar.vue';
 import Alert from './components/Alert.vue';
 import Footer from './components/Footer.vue';
+import { useAuthStore } from '@/stores';
+
+const authStore = useAuthStore();
 
 </script>
 

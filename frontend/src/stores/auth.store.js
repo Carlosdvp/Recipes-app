@@ -3,7 +3,7 @@ import { router } from "@/router"
 import { useAlertStore } from "@/stores"
 import { fetchWrapper } from "@/helpers/fetch-wrapper"
 
-const baseUrl = `${import.meta.env.API_URL}`
+const baseUrl = 'http://localhost:3000'
 
 export const useAuthStore = defineStore({
   id: 'auth',
