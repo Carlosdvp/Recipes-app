@@ -13,25 +13,25 @@
 - endpoints available for the free api
 
 Search meal by name
-www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata
+    www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata
 List all meals by first letter
-www.themealdb.com/api/json/v1/1/search.php?f=a
+    www.themealdb.com/api/json/v1/1/search.php?f=a
 Lookup full meal details by id
-www.themealdb.com/api/json/v1/1/lookup.php?i=52772
+    www.themealdb.com/api/json/v1/1/lookup.php?i=52772
 Lookup a single random meal
-www.themealdb.com/api/json/v1/1/random.php
+    www.themealdb.com/api/json/v1/1/random.php
 List all meal categories
-www.themealdb.com/api/json/v1/1/categories.php
+    www.themealdb.com/api/json/v1/1/categories.php
 List all Categories, Area, Ingredients
-www.themealdb.com/api/json/v1/1/list.php?c=list
-www.themealdb.com/api/json/v1/1/list.php?a=list
-www.themealdb.com/api/json/v1/1/list.php?i=list
+    www.themealdb.com/api/json/v1/1/list.php?c=list
+    www.themealdb.com/api/json/v1/1/list.php?a=list
+    www.themealdb.com/api/json/v1/1/list.php?i=list
 Filter by main ingredient
-www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast
+    www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast
 Filter by Category
-www.themealdb.com/api/json/v1/1/filter.php?c=Seafood
+    www.themealdb.com/api/json/v1/1/filter.php?c=Seafood
 Filter by Area
-www.themealdb.com/api/json/v1/1/filter.php?a=Canadian
+    www.themealdb.com/api/json/v1/1/filter.php?a=Canadian
 
 - branch: vuie-ui/Home-page
     - this has the hookup to the Recipes api and the respective MongoDB collection
