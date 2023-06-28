@@ -53,3 +53,16 @@
     - add the login and register routes
     - link to API /login and /register endpoints
 
+When I added the code for the Register component I got a CORS error when I submit the POST request. Login ocntinues to work correctly.
+
+I think the problem has to do with the cobbling together of 2 different source tutorials, and he fact that the one I am using for the FE is structured kind of weirdly, like if it was Typescript or react or something.
+
+Now I have two possible paths to take
+    - continue to troubleshoot and refactor consirebla parts of the code, or
+    - restart the UI, start from scratch basically.
+
+-----------------------------------------------------------------------------------------
+
+
+However, the API although a simple implementation was built in a sloppy way, and it is not a solid foundation in opinion.
+It would be better to use a different API (one built with better architecture and structure) or to start the whole project from scratch.
