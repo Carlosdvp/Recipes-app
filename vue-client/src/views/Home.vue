@@ -1,19 +1,32 @@
 <template>
   <h1 class="text-4xl font-bold text-center my-5">Recipes</h1>
   <div class="flex flex-col p-8">
+
     <input type="text" class="border-2 border-gray-200 w-[80%] mx-auto my-0" placeholder="Search for Recipes">
+
     <div class="flex justify-center gap-2 pt-4">
-      <router-link to="/" v-for="letter of letters">
+      <router-link :to="{name: 'byLetter', params: {letter}}" v-for="letter of letters" :key="letter">
         {{ letter }}
       </router-link>
     </div>
+
+    <pre>{{ ingredients }}</pre>
+
   </div>
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import store from '@/store'
+import axiosClient from '@/axiosClient.js'
 
-const meals = computed(() => store.state.meals);
 const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+let ingredients = ref([]);
+
+onMounted(async () => {
+  const response = await axiosClient.get('/recipes');
+  console.log(response.data[0].ingredients);
+  ingredients.value = response.data[0].ingredients;
+});
+
 </script>
