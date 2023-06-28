@@ -10,7 +10,7 @@
       </router-link>
     </div>
 
-    <pre>{{ ingredients }}</pre>
+    <pre>{{  }}</pre>
 
   </div>
 </template>
@@ -21,12 +21,12 @@ import store from '@/store'
 import axiosClient from '@/axiosClient.js'
 
 const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-let ingredients = ref([]);
+const ingredients = ref([]);
 
 onMounted(async () => {
-  const response = await axiosClient.get('/recipes');
-  console.log(response.data[0].ingredients);
-  ingredients.value = response.data[0].ingredients;
+  const response = await axiosClient.get('/list.php?i=list');
+  console.log(response.data.meals);
+  ingredients.value = response.data;
 });
 
 </script>
