@@ -3,9 +3,9 @@ import Navbar from '@/components/Navbar.vue'
 </script>
 
 <template>
-  <div class="bg-gray-200 h-full">
+  <div>
     <Navbar />
-    <main>
+    <main class="bg-gray-200">
       <router-view />
     </main>
   </div>

@@ -48,3 +48,6 @@ Filter by Area
 3. Flesh out the first component
     - MealsByName
     - implement a search function that makes the api call and stores the returned data in the store (to save on unnecessary api calls)
+4. Once we are receiving the data we want from the api it is time to render on the page and to style the results
+    - select data elements taht we want to display
+    - style them so that it look nice
