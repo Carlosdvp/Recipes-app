@@ -8,17 +8,31 @@
       @change="searchMealsByName"
     >
   </div>
+  <div>
+    <div>
+      <div v-for="meal of meals" :key="meal.idMeal">
+        <img :src="meal.strMealThumb" alt="meal.strMeal"/>
+        <h3>{{ meal.strMeal }}</h3>
+        <div>
+          <a :href="meal.strYoutube" target="_blank">Watch it on YouTube</a>
+          <router-link to="/">
+            View Details Page
+          </router-link>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import axiosClient from '@/axiosClient.js';
+import { computed, ref } from 'vue';
 import store from '@/store';
 
 const keyword = ref('');
+const meals = computed(() => store.state.searchedMeals);
 
 function searchMealsByName() {
-  store.dispatch('searchMealsByName')
+  store.dispatch('searchMealsByName', keyword.value)
 }
 
 </script>
