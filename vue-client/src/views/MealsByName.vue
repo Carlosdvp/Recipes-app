@@ -14,11 +14,14 @@
       :key="meal.idMeal"
       class="bg-white shadow-lg"
     >
-      <img 
-        :src="meal.strMealThumb"
-        alt="meal.strMeal"
-        class="h-[60%] object-cover w-full"
-      />
+      <router-link :to="{name: 'mealDetails', params: {id: meal.idMeal}}">
+        <img 
+          :src="meal.strMealThumb"
+          alt="meal.strMeal"
+          class="h-[60%] object-cover w-full"
+        />        
+      </router-link>
+
       <div class="px-3 pt-3">
         <h3 class="font-bold">{{ meal.strMeal }}</h3>
         <p>loren ipsum por loin pollerita flank steak bacon, mashed potatoes with garlic butter. Tomahawk steak, ribs in honey glaze.</p>
