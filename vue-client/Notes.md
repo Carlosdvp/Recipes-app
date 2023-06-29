@@ -38,4 +38,13 @@ Filter by Area
     - this is being set aside for now as a PoC and for future reference in integrating my Recipes API. I will have to expand the API and change how the data is stored in the DB
     - I plan to use the Meals API as a reference to structure the Recipes API and DB in the future.
 
--
+## Steps
+
+1. Create the Frontend UI skeleton
+    - Home page with search bar
+    - add Navbar 
+    - add remaining components
+2. make usre it all works, routing, api calls, etc.
+3. Flesh out the first component
+    - MealsByName
+    - implement a search function that makes the api call and stores the returned data in the store (to save on unnecessary api calls)
