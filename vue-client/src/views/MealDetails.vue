@@ -30,6 +30,18 @@
         </ul>
       </div>
     </div>
+
+    <div class="py-10">
+      <h2 class="text-xl font-semibold">Instructions</h2>
+      <p class="py-6">{{ meal.strInstructions }}</p>
+      <YoutubeButton 
+        :href="meal.strYoutube"
+        class="w-[70%] mx-auto text-center"
+      >
+        View Recipe on YouTube
+      </YoutubeButton>
+    </div>
+
   </div>
 </template>
 
@@ -37,6 +49,7 @@
 import { onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import axiosClient from '@/axiosClient.js';
+import YoutubeButton from '@/components/YoutubeButton.vue';
 
 const route = useRoute();
 const meal = ref({});

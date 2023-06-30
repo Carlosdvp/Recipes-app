@@ -9,37 +9,7 @@
     >
   </div>
   <div class="grid grid-cols-1 md:grid-cols-3 gap-7 p-9">
-    <div 
-      v-for="meal of meals"
-      :key="meal.idMeal"
-      class="bg-white shadow-lg"
-    >
-      <router-link :to="{name: 'mealDetails', params: {id: meal.idMeal}}">
-        <img 
-          :src="meal.strMealThumb"
-          alt="meal.strMeal"
-          class="h-[60%] object-cover w-full"
-        />        
-      </router-link>
-
-      <div class="px-3 pt-3">
-        <h3 class="font-bold">{{ meal.strMeal }}</h3>
-        <p>loren ipsum por loin pollerita flank steak bacon, mashed potatoes with garlic butter. Tomahawk steak, ribs in honey glaze.</p>
-        <div class="mt-4 flex justify-evenly">
-          <a 
-            :href="meal.strYoutube" target="_blank"
-            class="rounded border border-blue-700 bg-blue-400 px-3 py-2 hover:bg-blue-600 text-white"
-          >
-            Watch on YouTube
-          </a>
-          <router-link to="/" 
-            class="rounded border border-blue-700 bg-blue-400 px-3 py-2 hover:bg-blue-600 text-white"
-          >
-            View Details
-          </router-link>
-        </div>
-      </div>
-    </div>
+    <MealCard v-for="meal of meals" :key="meal.idMeal" :meal="meal" />
   </div>
 </template>
 
@@ -47,6 +17,7 @@
 import { computed, onMounted, ref } from 'vue';
 import store from '@/store';
 import { useRoute } from 'vue-router';
+import MealCard from '@/components/MealCard.vue';
 
 const route = useRoute();
 const keyword = ref('');
