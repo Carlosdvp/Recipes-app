@@ -1,5 +1,6 @@
 <template>
-  <div class="flex p-8"> 
+  <h1 class="text-2xl font-bold text-center pt-3">Search By Name</h1>
+  <div class="flex p-8">
     <input 
       type="text"
       v-model="keyword"
@@ -15,8 +16,8 @@
 
 <script setup>
 import { computed, onMounted, ref } from 'vue';
-import store from '@/store';
 import { useRoute } from 'vue-router';
+import store from '@/store';
 import MealCard from '@/components/MealCard.vue';
 
 const route = useRoute();

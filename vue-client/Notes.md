@@ -51,3 +51,13 @@ Filter by Area
 4. Once we are receiving the data we want from the api it is time to render on the page and to style the results
     - select data elements taht we want to display
     - style them so that it look nice
+
+5. Add and then style the components and vies
+6. In the MealsByLetter component
+    - after adding the required elements to the store and getting the data to render on the page
+    - we need to listen for clicks and for route changes
+    - Initial state only render on first letter selection, then it is necessary to reload the page to be able to select another letter and get those recipes.
+7. Add a .env file for the baseUrl, this way it won;t be hardcoded into the application and the backend API can be switched out if necessary.
+
+8. MealByIngredient is up next
+    - 
