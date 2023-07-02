@@ -60,4 +60,7 @@ Filter by Area
 7. Add a .env file for the baseUrl, this way it won;t be hardcoded into the application and the backend API can be switched out if necessary.
 
 8. MealByIngredient is up next
-    - 
+    - Show the ingredients on the page
+    - style the ingredient 'cards'
+
+9. We also need to create a new component and a new route to take us to the Ingredient's page when we click on one of the cards in the MealsByIngredient page

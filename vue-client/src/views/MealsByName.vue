@@ -9,16 +9,14 @@
       @change="searchMealsByName"
     >
   </div>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-7 p-9">
-    <MealCard v-for="meal of meals" :key="meal.idMeal" :meal="meal" />
-  </div>
+  <Meals :meals="meals" />
 </template>
 
 <script setup>
 import { computed, onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import store from '@/store';
-import MealCard from '@/components/MealCard.vue';
+import Meals from '@/components/Meals.vue';
 
 const route = useRoute();
 const keyword = ref('');
