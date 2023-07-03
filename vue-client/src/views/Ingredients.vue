@@ -20,6 +20,7 @@
       class="block bg-white shadow-lg p-3"
     >
       <h3 class="text-2xl font-semibold mb-3">{{ ingredient.strIngredient }}</h3>
+      <p>{{ ingredient.strDescription }}</p>
     </a>
   </div>
 </template>
