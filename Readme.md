@@ -1,68 +1,61 @@
-# Recipes App - MERN
+# Recipes App
+## Vue Front end and themealdb API
 
-## Step 1
+API = 'https://www.themealdb.com/api/json/v1/1'
 
-- Create the folders for the React client and Node server
-- Add libraries and a basic server 
+## Vue Frontend
 
-## Step 2
+- Tech used
+    - Vue
+    - Vuex
+    - Vue-router
+    - Axios
+    - TailwindCSS
 
-- Add a MongoDB database
-- Atals:
-    - Project: Recipes_App 
-- Create a Model for the DB
-- Routes
-    - begin with the userRouter to handle the /auth endpoint
-    - /auth/register > to create a new user
-    - /auth/login > create a jwt for the user's session
-- create the Recipes Model
-- then add the recipes routes
-- add verifyToken functionality to user routes file
+- 3rd Party API
+    - https://www.themealdb.com/api.php
 
-## Step 3 - Begin the Frontend part
+### endpoints used
 
-- use Vite with Vue for the project
-    - use Pinia for State Management
-- will also need Vue router
-- we'll also need navigation guards
-    - if you try to navigate to a protected route you should be sent to the Login/registration page
-- we have the following views:
-    - Login
-    - Register
-    - Recipes
-    - Saved Recipes for a user
-- Login view
-    - authenticate user
-    - if the user does not have an account link to Register page
-- Once user is Logged in
-    - automatically navigate to main Recipes page
+Search meal by name
+    www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata
+List all meals by first letter
+    www.themealdb.com/api/json/v1/1/search.php?f=a
+Lookup a single random meal
+    www.themealdb.com/api/json/v1/1/random.php
+List all Ingredients
+    www.themealdb.com/api/json/v1/1/list.php?i=list
+Filter by main ingredient
+    www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast
 
-## Step 4 - The Components
+- branch: vuie-ui/Home-page
+    - this has the hookup to the Recipes api and the respective MongoDB collection
+    - this is being set aside for now as a PoC and for future reference in integrating my Recipes API. I will have to expand the API and change how the data is stored in the DB
+    - I plan to use the Meals API as a reference to structure the Recipes API and DB in the future.
 
-1. Create the Navbar component
-    - setup routing for the app with these pages/views:
-        - Home
-        - Login/Register
-        - Recipes
-        - Saved Recipes
+## Steps
 
-2. The Login / Register component and Router guards
-    - create the auth.store.js file
-        - Pinia store for the login / register 
-    - create the Login component
-    - add the login and register routes
-    - link to API /login and /register endpoints
+1. Create the Frontend UI skeleton
+    - Home page with search bar
+    - add Navbar 
+    - add remaining components
+2. make usre it all works, routing, api calls, etc.
+3. Flesh out the first component
+    - MealsByName
+    - implement a search function that makes the api call and stores the returned data in the store (to save on unnecessary api calls)
+4. Once we are receiving the data we want from the api it is time to render on the page and to style the results
+    - select data elements taht we want to display
+    - style them so that it look nice
 
-When I added the code for the Register component I got a CORS error when I submit the POST request. Login ocntinues to work correctly.
+5. Add and then style the components and vies
+6. In the MealsByLetter component
+    - after adding the required elements to the store and getting the data to render on the page
+    - we need to listen for clicks and for route changes
+    - Initial state only render on first letter selection, then it is necessary to reload the page to be able to select another letter and get those recipes.
+7. Add a .env file for the baseUrl, this way it won;t be hardcoded into the application and the backend API can be switched out if necessary.
 
-I think the problem has to do with the cobbling together of 2 different source tutorials, and he fact that the one I am using for the FE is structured kind of weirdly, like if it was Typescript or react or something.
+8. MealByIngredient is up next
+    - Show the ingredients on the page
+    - style the ingredient 'cards'
 
-Now I have two possible paths to take
-    - continue to troubleshoot and refactor consirebla parts of the code, or
-    - restart the UI, start from scratch basically.
-
------------------------------------------------------------------------------------------
-
-
-However, the API although a simple implementation was built in a sloppy way, and it is not a solid foundation in opinion.
-It would be better to use a different API (one built with better architecture and structure) or to start the whole project from scratch.
+9. We also need to create a new component and a new route to take us to the Ingredient's page when we click on one of the cards in the MealsByIngredient view.
