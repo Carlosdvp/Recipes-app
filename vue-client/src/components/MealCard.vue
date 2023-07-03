@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white shadow-lg pb-2">
+  <div class="bg-white shadow-lg">
       <router-link :to="{name: 'mealDetails', params: {id: meal.idMeal}}">
         <img 
           :src="meal.strMealThumb"
@@ -8,19 +8,16 @@
         />        
       </router-link>
 
-      <div class="p-3">
-        <h3 class="font-bold">{{ meal.strMeal }}</h3>
-        <p>loren ipsum por loin pollerita flank steak bacon, mashed potatoes with garlic butter.</p>
-        <div class="mt-4 grid grid-rows-3 grid-cols-1">
+      <div class="px-3">
+        <h3 class="font-bold p-4 text-2xl">{{ meal.strMeal }}</h3>
+        <p>{{ truncateWords(meal.strInstructions, 20) + ' ...' }}</p>
+        <div class="flex items-center justify-evenly pt-4">
           
-          <YoutubeButton class="mx-auto my-0"
-            :href="meal.strYoutube"
-          >View on Youtube
-          </YoutubeButton>
+          <YoutubeButton :href="meal.strYoutube" />
 
           <router-link 
             :to="{name: 'mealDetails', params: {id: meal.idMeal}}" 
-            class="rounded border border-blue-700 bg-blue-400 px-2 py-2 hover:bg-blue-600 text-white mt-1 w-[50%] mx-auto my-0 text-center"
+            class="rounded border border-blue-700 bg-blue-400 p-2 hover:bg-blue-600 text-white text-center"
           >
             View Details
           </router-link>
@@ -38,5 +35,11 @@ const { meal } = defineProps({
     type: Object
   }
 })
+
+function truncateWords(string, wordCount) {
+  if (!string) return " ";
+
+  return string.split(" ").slice(0, wordCount).join(" ");
+}
 
 </script>

@@ -11,7 +11,7 @@
     >
   </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-7 p-9">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-7 p-9 h-full">
     <a
       href="#"
       @click.prevent="openIngredient(ingredient)"
@@ -20,7 +20,6 @@
       class="block bg-white shadow-lg p-3"
     >
       <h3 class="text-2xl font-semibold mb-3">{{ ingredient.strIngredient }}</h3>
-      <p>{{ ingredient.strDescription }}</p>
     </a>
   </div>
 </template>
